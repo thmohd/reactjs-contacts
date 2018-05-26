@@ -17,7 +17,7 @@ class ContactList extends Component{
 
   render(){
 
-      const contacts = this.props.contacts
+      const { contacts, onRemoveContact } = this.props
       const query = this.state.query
 
       const showingContacts = query === ''
@@ -47,6 +47,11 @@ class ContactList extends Component{
                   <p>{contact.name}</p>
                   <p>{contact.email}</p>
                 </div>
+                <button
+                  onClick={() => onRemoveContact(contact) }
+                  className="contact-remove">
+                  Remove Contact
+                </button>
               </li>
             )
           })}
