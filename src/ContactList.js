@@ -44,7 +44,6 @@ class ContactList extends Component{
                     Showing {showingContacts.length} out of {contacts.length}
                   </span>
                   <button
-                    className=""
                     onClick={() => this.clearQuery()}
                   >Show All</button>
                 </div>
