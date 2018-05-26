@@ -15,6 +15,10 @@ class ContactList extends Component{
     })
   }
 
+  clearQuery = () =>{
+    this.updateQuery('')
+  }
+
   render(){
 
       const { contacts, onRemoveContact } = this.props
@@ -34,6 +38,17 @@ class ContactList extends Component{
               className="search-contacts"
               value = {query}
               />
+              {contacts.length !== showingContacts.length && (
+                <div className="showing-contacts">
+                  <span>
+                    Showing {showingContacts.length} out of {contacts.length}
+                  </span>
+                  <button
+                    className=""
+                    onClick={() => this.clearQuery()}
+                  >Show All</button>
+                </div>
+              ) }
             </div>
           <ol className="contact-list">
           {showingContacts.map((contact) => {
