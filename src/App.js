@@ -1,29 +1,46 @@
 import React, { Component } from 'react';
 
+const contacts = [
+    {
+      id: 'ryan',
+      name: 'Ryan Florence',
+      email: 'ryan@reacttraining.com',
+      avatarURL: 'http://localhost:5001/ryan.jpg'
+    },
+    {
+      id: 'michael',
+      name: 'Michael Jackson',
+      email: 'michael@reacttraining.com',
+      avatarURL: 'http://localhost:5001/michael.jpg'
+    },
+    {
+      id: 'tyler',
+      name: 'Tyler McGinnis',
+      email: 'tyler@reacttraining.com',
+      avatarURL: 'http://localhost:5001/tyler.jpg'
+    }
+  ]
 
 class ContactList extends Component{
     render(){
       return (
-        <div className="contact-list">
-          <div className="contact-list-item">
-            <div className="contact-avatar">
-              <img src=""/>
-            </div>
-            <div className="contact-details">
-              <p>Name</p>
-              <p>Email</p>
-            </div>
-          </div>
-          <div className="contact-list-item">
-            <div className="contact-avatar">
-              <img src=""/>
-            </div>
-            <div className="contact-details">
-              <p>Name</p>
-              <p>Email</p>
-            </div>
-          </div>
-        </div>
+        <ol className="contact-list">
+
+        {contacts.map((contact) => {
+          return (
+            <li className="contact-list-item" key={contact.id}>
+              <div className="contact-avatar" style={{
+                backgroundImage: `URL(${contact.avatarURL})`
+              }}>
+              </div>
+              <div className="contact-details">
+                <p>{contact.name}</p>
+                <p>{contact.email}</p>
+              </div>
+            </li>
+          )
+        })}
+        </ol>
       )
     }
 }
