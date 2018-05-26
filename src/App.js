@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import SearchBar from './SearchBar'
+import ContactList from './ContactList'
 
 const contacts = [
     {
@@ -21,44 +23,12 @@ const contacts = [
     }
   ]
 
-class SearchBar extends Component{
-    render(){
-      return (
-        <input className="search-contacts"/>
-      )
-    }
-}
-
-class ContactList extends Component{
-    render(){
-      return (
-        <ol className="contact-list">
-
-        {contacts.map((contact) => {
-          return (
-            <li className="contact-list-item" key={contact.id}>
-              <div className="contact-avatar" style={{
-                backgroundImage: `URL(${contact.avatarURL})`
-              }}>
-              </div>
-              <div className="contact-details">
-                <p>{contact.name}</p>
-                <p>{contact.email}</p>
-              </div>
-            </li>
-          )
-        })}
-        </ol>
-      )
-    }
-}
-
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <SearchBar />
-        <ContactList />
+        <SearchBar  contacts={contacts}/>
+        <ContactList contacts={contacts} />
       </div>
     );
   }
