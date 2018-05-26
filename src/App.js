@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import SearchBar from './SearchBar'
 import ContactList from './ContactList'
 
 const contacts = [
@@ -27,7 +26,6 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SearchBar  contacts={contacts}/>
         <ContactList contacts={contacts} />
       </div>
     );
