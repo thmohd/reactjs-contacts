@@ -21,6 +21,14 @@ const contacts = [
     }
   ]
 
+class SearchBar extends Component{
+    render(){
+      return (
+        <input className="search-contacts"/>
+      )
+    }
+}
+
 class ContactList extends Component{
     render(){
       return (
@@ -49,6 +57,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <SearchBar />
         <ContactList />
       </div>
     );
