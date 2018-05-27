@@ -45,8 +45,11 @@ class App extends Component {
              contacts={this.state.contacts}
              onRemoveContact={this.removeContact} />
         )}/>
-        <Route  path="/create" render={()=>(
-          <CreateContact onCreateContact={this.createContact} />
+        <Route  path="/create" render={({history})=>(
+          <CreateContact onCreateContact={(contact)=>{
+            this.createContact(contact)
+            history.push('/')
+          }} />
         )}/>
       </div>
     );
