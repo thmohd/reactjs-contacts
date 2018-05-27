@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+
 class ContactList extends Component{
 
   constructor(props){
@@ -7,6 +9,11 @@ class ContactList extends Component{
     this.state = {
       query: ''
     }
+  }
+
+  static propTypes = {
+    contacts: PropTypes.array.isRequired,
+    onRemoveContact: PropTypes.func.isRequired,
   }
 
   updateQuery = (query) =>{
