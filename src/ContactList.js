@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { Link } from 'react-router-dom'
 class ContactList extends Component{
 
   constructor(props){
@@ -31,13 +31,14 @@ class ContactList extends Component{
       })
 
       return (
-        <div>
-          <div>
+        <div className="list-contacts">
+          <div className="list-contacts-top">
               <input
               onChange={(event) => this.updateQuery(event.target.value) }
               className="search-contacts"
               value = {query}
               />
+              <Link className="add-contact" to='/create'>Add User</Link>
               {contacts.length !== showingContacts.length && (
                 <div className="showing-contacts">
                   <span>
